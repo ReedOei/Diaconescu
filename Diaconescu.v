@@ -13,24 +13,21 @@ Variable choice_prop : forall {A : Type} (x : Ensemble A), In x (choice A x).
 Definition U (P : Prop) (x : bool) := x = true \/ P.
 Definition V (P : Prop) (x : bool) := x = false \/ P.
 
-Lemma P_imp_in_U :
-  forall {P : Prop}, P -> forall (x : bool), In (U P) x.
+Lemma P_imp_in_U : forall {P : Prop}, P -> forall (x : bool), In (U P) x.
 Proof.
 intuition.
 unfold U, In.
 intuition.
 Qed.
 
-Lemma P_imp_in_V :
-  forall {P : Prop}, P -> forall (x : bool), In (V P) x.
+Lemma P_imp_in_V : forall {P : Prop}, P -> forall (x : bool), In (V P) x.
 Proof.
 intuition.
 unfold V, In.
 intuition.
 Qed.
 
-Lemma P_imp_full :
-  forall {P : Prop}, P -> U P = V P.
+Lemma P_imp_full : forall {P : Prop}, P -> U P = V P.
 Proof.
 intuition.
 apply Extensionality_Ensembles.
@@ -41,8 +38,7 @@ now (apply P_imp_in_V).
 now (apply P_imp_in_U).
 Qed.
 
-Theorem diaconescu :
-  forall (P : Prop), P \/ ~P.
+Theorem diaconescu : forall (P : Prop), P \/ ~P.
 Proof.
 intuition.
 
