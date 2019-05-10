@@ -72,7 +72,7 @@ now (rewrite eq_prf, H0 in H).
 
 - now left.
 - now left.
-Qed
+Qed.
 
 Lemma ex_middle_neg : forall (P : Prop), ~(~(P \/ ~P)).
 Proof.
