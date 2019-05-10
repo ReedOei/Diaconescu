@@ -72,19 +72,7 @@ now (rewrite eq_prf, H0 in H).
 
 - now left.
 - now left.
-Qed.
-
-Require Import String.
-
-Inductive conn (s : string) := blah.
-Inductive open {s : string} (c : conn s) := bar.
-
-Lemma lemma : exists (c : conn "google.com"), open c.
-Proof.
-pose proof diaconescu (exists (c : conn "google.com"), open c).
-induction H.
-intuition.
-intuition.
+Qed
 
 Lemma ex_middle_neg : forall (P : Prop), ~(~(P \/ ~P)).
 Proof.
